@@ -11,9 +11,11 @@
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
-
     // and we want to make a copy of it.
+    const newArr = [...players];
+    newArr[3] = 'hello'
 
+console.log(newArr, players)
     // You might think we can just do something like this:
 
     // however what happens when we update that array?
@@ -37,15 +39,34 @@
     // The same thing goes for objects, let's say we have a person object
 
     // with Objects
-
+    const obj = {
+      name: 'harrison',
+      age: undefined,
+      location: null
+    };
     // and think we make a copy:
-
+    
     // how do we take a copy instead?
 
     // We will hopefully soon see the object ...spread
-
+    const newObj = {...obj}
+    const newObj2 = Object.assign({}, obj);
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    // newObj[age
+    console.log(newObj, newObj2)
 
+    const test = {
+      test: {
+        test: 'test',
+        testtest : {
+          doubletest: 'string'
+        }
+      }
+    }
+    const test1 = {...test}
+    console.log(test1)
+    const test2 = JSON.parse(JSON.stringify(test));
+    console.log(test2)
   </script>
 
 </body>
