@@ -45,6 +45,30 @@
 
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const list = document.querySelector('#bands');
+const articles = ['the', 'a', 'an']
+const sorted = bands.sort((a, b) => {
+  let arrA = a.split(' ');
+  let arrB = b.split(' ');
+  arrA = arrA.filter(word => {
+    if(articles.includes(word.toLowerCase())){
+      return;
+    } else {return word}
+  })
+  arrB = arrB.filter(word => {
+    if(articles.includes(word.toLowerCase())){
+      return;
+    } else {return word}
+  })
+  if(arrA[0].charCodeAt(0) > arrB[0].charCodeAt(0)){
+    return 1;
+  } else {
+    return -1;
+  }
+
+});
+
+console.log(sorted)
 
 
 </script>
